@@ -1,9 +1,19 @@
-﻿using System;
+﻿using FarmSystem.Test1.Utilities.Log;
+using System;
+using System.Collections.Generic;
 
 namespace FarmSystem.Test1
 {
     public class EmydexFarmSystem
     {
+        private readonly List<object> _animals = new List<object>();
+        private readonly ILogger _logger;
+
+        public EmydexFarmSystem()
+        {
+            _logger = LoggerFactory.GetLogger();
+        }
+
         //TEST 1
         public void Enter(object animal)
         {
