@@ -20,3 +20,7 @@
 /.vs/Emydex.FarmSystem.Test/v17/TestStore/0
 /FarmSystem.Test1/FarmSystem.Test.csproj
 /Logs
+/.vs
+/Emydex.TestProject1/bin/Debug/net452
+/Emydex.TestProject1/obj/Debug/net452
+/Emydex.TestProject1/obj
