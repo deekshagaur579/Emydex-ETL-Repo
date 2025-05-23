@@ -8,8 +8,8 @@ namespace FarmSystem.Test1
         private static void Main(string[] args)
         {
             //Excercise1();  to work only on exercise 2
-            Excercise2();
-           // Excercise3();
+            //Excercise2();
+            Excercise3();
            // Excercise4();
             Console.ReadKey();
         }
@@ -91,7 +91,7 @@ Sheep has entered the farm
 
             Hen hen = new Hen();
             hen.Id = Guid.NewGuid().ToString();
-            cow.NoOfLegs = 2; //Hen has 2 legs
+            hen.NoOfLegs = 2; //Hen has 2 legs
             farm.Enter(hen);
 
             Horse horse = new Horse();
@@ -143,7 +143,7 @@ Cow was milked!
 
             Hen hen = new Hen();
             hen.Id = Guid.NewGuid().ToString();
-            cow.NoOfLegs = 4;
+            hen.NoOfLegs = 2; //Hen has 2 legs
             farm.Enter(hen);
 
             Horse horse = new Horse();
@@ -192,7 +192,7 @@ Emydex Farm is now empty
 
             Hen hen = new Hen();
             hen.Id = Guid.NewGuid().ToString();
-            cow.NoOfLegs = 4;
+            hen.NoOfLegs = 2; //Hen has 2 legs
             farm.Enter(hen);
 
             Horse horse = new Horse();
