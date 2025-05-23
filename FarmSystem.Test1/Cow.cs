@@ -1,53 +1,58 @@
-﻿using System;
+﻿using FarmSystem.Test1.Utilities.Log;
+using FarmSystem.Test2;
+using System;
 
 namespace FarmSystem.Test1
 {
-    public class Cow 
+    public class Cow : Animal, IMilkableAnimal
     {
-        private string _id;
-        private int _noOfLegs = 4;
+
+        //exercise  1 changes
+        //private string _id;
+        //private int _noOfLegs = 4;
 
 
-        public string Id
-        {
-            get { return _id; }
-            set
-            {
-                _id = value;
-            }
-        }
+        //public string Id
+        //{
+        //    get { return _id; }
+        //    set
+        //    {
+        //        _id = value;
+        //    }
+        //}
 
-        public int NoOfLegs
-        {
-            get
-            {
-                return _noOfLegs;
-            }
-            set
-            {
-                _noOfLegs = 4;
-            }
-        }
+        //public int NoOfLegs
+        //{
+        //    get
+        //    {
+        //        return _noOfLegs;
+        //    }
+        //    set
+        //    {
+        //        _noOfLegs = 4;
+        //    }
+        //}
 
-        public void Talk()
+        public override void Talk()
         {
             Console.WriteLine("Cow says Moo!");
         }
-
-        public void Walk()
-        {
-            Console.WriteLine("Cow is walking");
-        }
-
         public void ProduceMilk()
         {
-            Console.WriteLine("Cow produced milk");
+            Console.WriteLine("Cow was milked!");
+            FileLogger.Instance.LogInformation($"Cow ID: {Id} was milked");
         }
 
-        public void Run()
-        {
-            Console.WriteLine("Cow is running");
-        }
+        //not in use yet
+        //public void Walk()
+        //{
+        //    Console.WriteLine("Cow is walking");
+        //}
+
+        //public void Run()
+        //{
+        //    Console.WriteLine("Cow is running");
+        //}
 
     }
 }
