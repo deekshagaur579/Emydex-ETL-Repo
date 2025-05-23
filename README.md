@@ -418,3 +418,55 @@ Emydex.FarmSystem.Test/
 │   └── Sheep.cs
 
 ```
+
+---
+
+
+# Unit Tests
+This project includes unit tests for all animal classes in the farm system. The tests verify that each animal produces the expected sound when the Talk() method is called. There is also a test case to ensure the system behaves correctly when no animals are present.
+
+## Running Tests
+The tests are written using NUnit framework.
+
+You can run the tests directly within Visual Studio 2022 using the Test Explorer window.
+
+Alternatively, tests can be run via the command line using the dotnet test command.
+
+## Example test case
+Each animal (Cow, Hen, Horse, Sheep) outputs its specific sound.
+
+When there are no animals in the farm, the system produces no output, ensuring no unexpected behavior occurs.
+```csharp
+  public void Animal_MakeSound_ReturnsExpectedSound(Type animalType, string expectedSound)
+  {
+      // Arrange
+      var animals = new List<Animal>
+      {
+          new Hen(),
+          new Cow(),
+          new Horse(),
+          new Sheep()
+      };
+
+      var expectedOutputs = new List<string>
+      {
+          "Hen says CLUCKAAAAAWWWWK!",
+          "Cow says Moo!",
+          "Horse says neigh!",
+          "Sheep says baa!"
+      };
+
+      for (int i = 0; i < animals.Count; i++)
+      {
+          var output = new StringWriter();
+          Console.SetOut(output);
+
+          // Act
+          animals[i].Talk();
+          var actualOutput = output.ToString().Trim();
+
+          // Assert
+          Assert.AreEqual(expectedOutputs[i], actualOutput, $"Failed for {animals[i].GetType().Name}");
+      }
+  }
+```
