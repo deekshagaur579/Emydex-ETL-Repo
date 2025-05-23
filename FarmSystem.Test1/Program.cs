@@ -198,6 +198,14 @@ Emydex Farm is now empty
             {
                 Console.ReadKey();
                 var farm = new EmydexFarmSystem();
+
+                // Subscribe to the event
+                farm.FarmEmpty += (sender, args) =>
+                {
+                    Console.WriteLine("Emydex Farm is now empty");
+                    FileLogger.Instance.LogInformation("Emydex Farm is now empty");
+                };
+
                 Cow cow = new Cow();
                 cow.Id = Guid.NewGuid().ToString();
                 cow.NoOfLegs = 4;

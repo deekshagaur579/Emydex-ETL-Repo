@@ -9,6 +9,13 @@ namespace FarmSystem.Test1
     public class EmydexFarmSystem
     {
         private readonly Queue<Animal> _animals = new Queue<Animal>();
+        //exercise 4 changes
+        //raising event 
+        public event EventHandler FarmEmpty;
+        protected virtual void OnFarmEmpty()
+        {
+            FarmEmpty?.Invoke(this, EventArgs.Empty);
+        }
 
         //TEST 1
         public void Enter(Animal animal)
@@ -86,6 +93,8 @@ namespace FarmSystem.Test1
                         Console.WriteLine($"{animal.GetType().Name} has left the farm");
                         FileLogger.Instance.LogInformation($"{animal.GetType().Name} ID: {animal.Id} has left the farm");
                     }
+                    // Raise the FarmEmpty event
+                    OnFarmEmpty();
                 }
                 else
                 {
