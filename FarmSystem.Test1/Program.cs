@@ -9,13 +9,13 @@ namespace FarmSystem.Test1
         {
             //Excercise1();  to work only on exercise 2
             //Excercise2();
-            Excercise3();
-           // Excercise4();
+            //Excercise3();
+            Excercise4();
             Console.ReadKey();
         }
 
 /************************************************************************************************************
-Exercise 1 : Apply OOP concepts (abstraction and encapsulation) to the classes 
+Exercise 1 : Apply OOP concepts (abstraction and encapsulation) to the classes
 modify the code to get the output below
 Cow has entered the farm
 Hen has entered the farm
@@ -25,7 +25,7 @@ Sheep has entered the farm
         private static void Excercise1()
         {
             Console.WriteLine("Exercise 1 : Press any key when it is time to open the Farm to animals");
-            FileLogger.Instance.LogInformation("Exercise 1 initiated" );
+            FileLogger.Instance.LogInformation("Exercise 1 initiated");
             try
             {
                 Console.ReadKey();
@@ -83,31 +83,31 @@ Sheep has entered the farm
             try
             {
                 Console.ReadKey();
-            var farm = new EmydexFarmSystem();
-            Cow cow = new Cow();
-            cow.Id = Guid.NewGuid().ToString();
-            cow.NoOfLegs = 4;
-            farm.Enter(cow);
+                var farm = new EmydexFarmSystem();
+                Cow cow = new Cow();
+                cow.Id = Guid.NewGuid().ToString();
+                cow.NoOfLegs = 4;
+                farm.Enter(cow);
 
-            Hen hen = new Hen();
-            hen.Id = Guid.NewGuid().ToString();
-            hen.NoOfLegs = 2; //Hen has 2 legs
-            farm.Enter(hen);
+                Hen hen = new Hen();
+                hen.Id = Guid.NewGuid().ToString();
+                hen.NoOfLegs = 2; //Hen has 2 legs
+                farm.Enter(hen);
 
-            Horse horse = new Horse();
-            horse.Id = Guid.NewGuid().ToString();
-            horse.NoOfLegs = 4;
-            farm.Enter(horse);
+                Horse horse = new Horse();
+                horse.Id = Guid.NewGuid().ToString();
+                horse.NoOfLegs = 4;
+                farm.Enter(horse);
 
-            Sheep sheep = new Sheep();
-            sheep.Id = Guid.NewGuid().ToString();
-            sheep.NoOfLegs = 4;
-            farm.Enter(sheep);
-            
-            farm.MakeNoise();
+                Sheep sheep = new Sheep();
+                sheep.Id = Guid.NewGuid().ToString();
+                sheep.NoOfLegs = 4;
+                farm.Enter(sheep);
 
-            FileLogger.Instance.LogInformation("Exercise 2 Ended");
-            Console.ReadKey();
+                farm.MakeNoise();
+
+                FileLogger.Instance.LogInformation("Exercise 2 Ended");
+                Console.ReadKey();
             }
             catch (Exception ex)
             {
@@ -117,7 +117,7 @@ Sheep has entered the farm
 
 /*****************************************************************************************************************
 Test Excercise 3
-If you have completed the previous test excercise, you can continue with this one 
+If you have completed the previous test excercise, you can continue with this one
 The project includes an interface IMilkableAnimal. Make use of this interface to implement on the relevant classes
 so that calling the EmydexFarmSystem.MilkAnimals() method to get the below output
 
@@ -193,30 +193,39 @@ Emydex Farm is now empty
         {
             //TODO : Apply OOP concepts and modify the code below to get the required output 
             Console.WriteLine("Exercise 4: Press any key to free all animals");
-            Console.ReadKey();
-            var farm = new EmydexFarmSystem();
-            Cow cow = new Cow();
-            cow.Id = Guid.NewGuid().ToString();
-            cow.NoOfLegs = 4;
-            farm.Enter(cow);
+            FileLogger.Instance.LogInformation("Exercise 4 initiated");
+            try
+            {
+                Console.ReadKey();
+                var farm = new EmydexFarmSystem();
+                Cow cow = new Cow();
+                cow.Id = Guid.NewGuid().ToString();
+                cow.NoOfLegs = 4;
+                farm.Enter(cow);
 
-            Hen hen = new Hen();
-            hen.Id = Guid.NewGuid().ToString();
-            hen.NoOfLegs = 2; //Hen has 2 legs
-            farm.Enter(hen);
+                Hen hen = new Hen();
+                hen.Id = Guid.NewGuid().ToString();
+                hen.NoOfLegs = 2; //Hen has 2 legs
+                farm.Enter(hen);
 
-            Horse horse = new Horse();
-            horse.Id = Guid.NewGuid().ToString();
-            horse.NoOfLegs = 4;
-            farm.Enter(horse);
+                Horse horse = new Horse();
+                horse.Id = Guid.NewGuid().ToString();
+                horse.NoOfLegs = 4;
+                farm.Enter(horse);
 
-            Sheep sheep = new Sheep();
-            sheep.Id = Guid.NewGuid().ToString();
-            sheep.NoOfLegs = 4;
-            farm.Enter(sheep);
+                Sheep sheep = new Sheep();
+                sheep.Id = Guid.NewGuid().ToString();
+                sheep.NoOfLegs = 4;
+                farm.Enter(sheep);
 
-            farm.ReleaseAllAnimals();
-            Console.ReadKey();
+                farm.ReleaseAllAnimals();
+                FileLogger.Instance.LogInformation("Exercise 4 Ended");
+                Console.ReadKey();
+            }
+            catch (Exception ex)
+            {
+                FileLogger.Instance.LogError($"Exception: {ex.Message}");
+            }
         }
 
     }

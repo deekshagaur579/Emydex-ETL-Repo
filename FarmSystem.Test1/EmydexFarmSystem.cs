@@ -15,7 +15,7 @@ namespace FarmSystem.Test1
         {
             //TODO Modify the code so that we can display the type of animal (cow, sheep etc) 
             //Hold all the animals so it is available for future activities
-           // Console.WriteLine("Animal has entered the Emydex farm");
+            // Console.WriteLine("Animal has entered the Emydex farm");
 
             //exercise 1 chnages
             if (animal != null)
@@ -30,7 +30,7 @@ namespace FarmSystem.Test1
             }
 
         }
-     
+
         //TEST 2
         public void MakeNoise()
         {
@@ -76,7 +76,27 @@ namespace FarmSystem.Test1
         //TEST 4
         public void ReleaseAllAnimals()
         {
-           Console.WriteLine("There are still animals in the farm, farm is not free");
+            try
+            {
+                if (_animals.Any())
+                {
+                    while (_animals.Any())
+                    {
+                        var animal = _animals.Dequeue();
+                        Console.WriteLine($"{animal.GetType().Name} has left the farm");
+                        FileLogger.Instance.LogInformation($"{animal.GetType().Name} ID: {animal.Id} has left the farm");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("There are no animals in the farm to empty.");
+                }
+            }
+            catch (Exception ex)
+            {
+                FileLogger.Instance.LogError($"There are still animals in the farm, farm is not free" + ex.Message);
+                Console.WriteLine("There are still animals in the farm, farm is not free");
+            }
         }
     }
 }
