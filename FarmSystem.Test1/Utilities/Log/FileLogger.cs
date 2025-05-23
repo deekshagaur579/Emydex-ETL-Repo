@@ -26,7 +26,7 @@ namespace FarmSystem.Test1.Utilities.Log
             // Create file if it does not exist
             if (!File.Exists(_logFilePath))
             {
-                using (File.Create(_logFilePath)) { }
+                File.Create(_logFilePath);
             }
         }
 

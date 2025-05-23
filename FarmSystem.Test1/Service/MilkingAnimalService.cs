@@ -12,7 +12,6 @@ namespace FarmSystem.Test1.Service
                 if (animal is IMilkableAnimal milkable)
                 {
                     milkable.ProduceMilk();
-                  //  _logger.LogInformation($"{animal.GetType().Name} ID: {animal.Id} was milked");
                 }
             }
         }
