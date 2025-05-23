@@ -32,7 +32,7 @@ namespace FarmSystem.Test1
 
         public override void Talk()
         {
-            Console.WriteLine("Hen say CLUCKAAAAAWWWWK!");
+            Console.WriteLine("Hen says CLUCKAAAAAWWWWK!");
         }
 
         //not in use yet
