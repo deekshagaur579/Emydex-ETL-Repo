@@ -17,3 +17,6 @@
 *.dll
 /FarmSystem.Test1/packages.config
 /FarmSystem.Test1/bin/debug
+/.vs/Emydex.FarmSystem.Test/v17/TestStore/0
+/FarmSystem.Test1/FarmSystem.Test.csproj
+/Logs
