@@ -2,43 +2,43 @@
 
 namespace FarmSystem.Test1
 {
-    public class Hen 
+    public class Hen : Animal
     {
-        private string _id;
-        private int _noOfLegs = 4;
+        //exercise  1 changes
+        //private string _id;
+        //private int _noOfLegs = 4;
 
 
-        public string Id
+        //public string Id
+        //{
+        //    get { return _id; }
+        //    set
+        //    {
+        //        _id = value;
+        //    }
+        //}
+
+        //public int NoOfLegs
+        //{
+        //    get
+        //    {
+        //        return _noOfLegs;
+        //    }
+        //    set
+        //    {
+        //        _noOfLegs = 4;
+        //    }
+        //}
+
+        public override void Talk()
         {
-            get { return _id; }
-            set
-            {
-                _id = value;
-            }
-        }
-        
-
-
-        public int NoOfLegs
-        {
-            get
-            {
-                return _noOfLegs;
-            }
-            set
-            {
-                _noOfLegs = 4;
-            }
+            Console.WriteLine("Hen says CLUCKAAAAAWWWWK!");
         }
 
-        public void Talk()
-        {
-            Console.WriteLine("Hen say CLUCKAAAAAWWWWK!");
-        }
-
-        public void Run()
-        {
-            Console.WriteLine("Hen is running");
-        }
+        //not in use yet
+        //public void Run()
+        //{
+        //    Console.WriteLine("Hen is running");
+        //}
     }
 }
