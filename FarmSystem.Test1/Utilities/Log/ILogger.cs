@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FarmSystem.Test1.Utilities.Log
+﻿namespace FarmSystem.Test1.Utilities.Log
 {
     public interface ILogger
     {

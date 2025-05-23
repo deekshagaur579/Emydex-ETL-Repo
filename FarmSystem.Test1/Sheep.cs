@@ -34,11 +34,12 @@ namespace FarmSystem.Test1
         {
             Console.WriteLine("Sheep says baa!");
         }
-        
-        public void Run()
-        {
-            Console.WriteLine("Sheep is running");
-        }
+
+        //not in use yet
+        //public void Run()
+        //{
+        //    Console.WriteLine("Sheep is running");
+        //}
     }
 
 }

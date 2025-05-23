@@ -42,15 +42,17 @@ namespace FarmSystem.Test1
             Console.WriteLine("Cow was milked!");
             FileLogger.Instance.LogInformation($"Cow ID: {Id} was milked");
         }
-        public void Walk()
-        {
-            Console.WriteLine("Cow is walking");
-        }
 
-        public void Run()
-        {
-            Console.WriteLine("Cow is running");
-        }
+        //not in use yet
+        //public void Walk()
+        //{
+        //    Console.WriteLine("Cow is walking");
+        //}
+
+        //public void Run()
+        //{
+        //    Console.WriteLine("Cow is running");
+        //}
 
     }
 }

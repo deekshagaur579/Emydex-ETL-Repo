@@ -35,9 +35,10 @@ namespace FarmSystem.Test1
             Console.WriteLine("Hen say CLUCKAAAAAWWWWK!");
         }
 
-        public void Run()
-        {
-            Console.WriteLine("Hen is running");
-        }
+        //not in use yet
+        //public void Run()
+        //{
+        //    Console.WriteLine("Hen is running");
+        //}
     }
 }

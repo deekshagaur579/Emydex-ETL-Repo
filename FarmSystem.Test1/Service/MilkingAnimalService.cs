@@ -1,10 +1,5 @@
-﻿using FarmSystem.Test1.Utilities.Log;
-using FarmSystem.Test2;
-using System;
+﻿using FarmSystem.Test2;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FarmSystem.Test1.Service
 {
