@@ -1,4 +1,5 @@
-﻿using FarmSystem.Test1.Utilities.Log;
+﻿using FarmSystem.Test1.Service;
+using FarmSystem.Test1.Utilities.Log;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,7 +54,23 @@ namespace FarmSystem.Test1
         //TEST 3
         public void MilkAnimals()
         {
-            Console.WriteLine("Cannot identify the farm animals which can be milked");
+            if (_animals.Any())
+            {
+                try
+                {
+                    var milkingService = new MilkingAnimalService();
+                    milkingService.ProduceMilk(_animals);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Cannot identify the farm animals which can be milked");
+                    FileLogger.Instance.LogError("Cannot identify the farm animals which can be milked");
+                }
+            }
+            else
+            {
+                Console.WriteLine("There are no animals in the farm");
+            }
         }
 
         //TEST 4

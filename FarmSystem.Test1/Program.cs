@@ -134,30 +134,40 @@ Cow was milked!
         {
             //TODO : Apply OOP concepts and modify the code below to get the required output 
             Console.WriteLine("Exercise 3 : Press any key when it is time to milk animals");
-            Console.ReadKey();
-            var farm = new EmydexFarmSystem();
-            Cow cow = new Cow();
-            cow.Id = Guid.NewGuid().ToString();
-            cow.NoOfLegs = 4;
-            farm.Enter(cow);
+            FileLogger.Instance.LogInformation("Exercise 3 initiated");
+            try
+            {
+                Console.ReadKey();
+                var farm = new EmydexFarmSystem();
+                Cow cow = new Cow();
+                cow.Id = Guid.NewGuid().ToString();
+                cow.NoOfLegs = 4;
+                farm.Enter(cow);
 
-            Hen hen = new Hen();
-            hen.Id = Guid.NewGuid().ToString();
-            hen.NoOfLegs = 2; //Hen has 2 legs
-            farm.Enter(hen);
+                Hen hen = new Hen();
+                hen.Id = Guid.NewGuid().ToString();
+                hen.NoOfLegs = 2; //Hen has 2 legs
+                farm.Enter(hen);
 
-            Horse horse = new Horse();
-            horse.Id = Guid.NewGuid().ToString();
-            horse.NoOfLegs = 4;
-            farm.Enter(horse);
+                Horse horse = new Horse();
+                horse.Id = Guid.NewGuid().ToString();
+                horse.NoOfLegs = 4;
+                farm.Enter(horse);
 
-            Sheep sheep = new Sheep();
-            sheep.Id = Guid.NewGuid().ToString();
-            sheep.NoOfLegs = 4;
-            farm.Enter(sheep);
+                Sheep sheep = new Sheep();
+                sheep.Id = Guid.NewGuid().ToString();
+                sheep.NoOfLegs = 4;
+                farm.Enter(sheep);
 
-            farm.MilkAnimals();
-            Console.ReadKey();
+                farm.MilkAnimals();
+
+                FileLogger.Instance.LogInformation("Exercise 3 Ended");
+                Console.ReadKey();
+            }
+            catch (Exception ex)
+            {
+                FileLogger.Instance.LogError($"Exception: {ex.Message}");
+            }
         }
 
 /****************************************************************************************************

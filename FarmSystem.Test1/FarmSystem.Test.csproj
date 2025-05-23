@@ -59,7 +59,8 @@
     <Compile Include="Cow.cs" />
     <Compile Include="EmydexFarmSystem.cs" />
     <Compile Include="Horse.cs" />
-    <Compile Include="IMilkableAnimal.cs" />
+    <Compile Include="Interfaces\IMilkableAnimal.cs" />
+    <Compile Include="Service\MilkingAnimalService.cs" />
     <Compile Include="Sheep.cs" />
     <Compile Include="Hen.cs" />
     <Compile Include="Program.cs" />
