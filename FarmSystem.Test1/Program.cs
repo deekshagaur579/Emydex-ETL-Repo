@@ -78,7 +78,7 @@ Sheep has entered the farm
  *****************************************************************************************************************/
         private static void Excercise2()
         {
-            //TODO : Apply OOP concepts and modify the code below to get the required output 
+            // Apply OOP concepts and modify the code below to get the required output 
             Console.WriteLine("Exercise 2 : Press any key to scare the animals in the farm");
             FileLogger.Instance.LogInformation("Exercise 2 initiated");
             try
@@ -133,7 +133,7 @@ Cow was milked!
 ************************************************************************************************************/
         private static void Excercise3()
         {
-            //TODO : Apply OOP concepts and modify the code below to get the required output 
+            //: Apply OOP concepts and modify the code below to get the required output 
             Console.WriteLine("Exercise 3 : Press any key when it is time to milk animals");
             FileLogger.Instance.LogInformation("Exercise 3 initiated");
             try
@@ -192,7 +192,7 @@ Emydex Farm is now empty
 ********************************************************************************************************************/
         private static void Excercise4()
         {
-            //TODO : Apply OOP concepts and modify the code below to get the required output 
+            //Apply OOP concepts and modify the code below to get the required output 
             Console.WriteLine("Exercise 4: Press any key to free all animals");
             FileLogger.Instance.LogInformation("Exercise 4 initiated");
             try

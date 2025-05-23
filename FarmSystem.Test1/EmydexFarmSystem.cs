@@ -20,16 +20,14 @@ namespace FarmSystem.Test1
         //TEST 1
         public void Enter(Animal animal)
         {
-            //TODO Modify the code so that we can display the type of animal (cow, sheep etc) 
+            //Modify the code so that we can display the type of animal (cow, sheep etc) 
             //Hold all the animals so it is available for future activities
-            // Console.WriteLine("Animal has entered the Emydex farm");
 
             //exercise 1 chnages
             if (animal != null)
             {
-                Animal farmAnimal = (Animal)animal;
-                _animals.Enqueue(farmAnimal); //FIFO queue
-                farmAnimal.EnterFarm();
+                _animals.Enqueue(animal); //FIFO queue
+                animal.EnterFarm();
             }
             else
             {
@@ -42,7 +40,6 @@ namespace FarmSystem.Test1
         public void MakeNoise()
         {
             //Test 2 : Modify this method to make the animals talk
-            //Console.WriteLine("There are no animals in the farm");
 
             if (_animals.Any())
             {
@@ -71,7 +68,7 @@ namespace FarmSystem.Test1
                 catch (Exception ex)
                 {
                     Console.WriteLine("Cannot identify the farm animals which can be milked");
-                    FileLogger.Instance.LogError("Cannot identify the farm animals which can be milked");
+                    FileLogger.Instance.LogError("Cannot identify the farm animals which can be milked" + ex.Message);
                 }
             }
             else
