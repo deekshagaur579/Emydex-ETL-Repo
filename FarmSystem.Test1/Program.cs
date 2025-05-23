@@ -1,10 +1,10 @@
-﻿using System;
+﻿using FarmSystem.Test1.Utilities.Log;
+using System;
 
 namespace FarmSystem.Test1
 {
     internal class Program
     {
-       
         private static void Main(string[] args)
         {
             Excercise1();
@@ -25,28 +25,38 @@ Sheep has entered the farm
         private static void Excercise1()
         {
             Console.WriteLine("Exercise 1 : Press any key when it is time to open the Farm to animals");
-            Console.ReadKey();
-            var farm = new EmydexFarmSystem();
-            Cow cow = new Cow();
-            cow.Id = Guid.NewGuid().ToString();
-            cow.NoOfLegs = 4;
-            farm.Enter(cow);
+            FileLogger.Instance.LogInformation("Exercise 1 initiated" );
+            try
+            {
+                Console.ReadKey();
+                var farm = new EmydexFarmSystem();
+                Cow cow = new Cow();
+                cow.Id = Guid.NewGuid().ToString();
+                cow.NoOfLegs = 4;
+                farm.Enter(cow);
 
-            Hen hen = new Hen();
-            hen.Id = Guid.NewGuid().ToString();
-            cow.NoOfLegs = 4;
-            farm.Enter(hen);
+                Hen hen = new Hen();
+                hen.Id = Guid.NewGuid().ToString();
+                hen.NoOfLegs = 2; //Hen has 2 legs
+                farm.Enter(hen);
 
-            Horse horse = new Horse();
-            horse.Id = Guid.NewGuid().ToString();
-            horse.NoOfLegs = 4;
-            farm.Enter(horse);
+                Horse horse = new Horse();
+                horse.Id = Guid.NewGuid().ToString();
+                horse.NoOfLegs = 4;
+                farm.Enter(horse);
 
-            Sheep sheep = new Sheep();
-            sheep.Id = Guid.NewGuid().ToString();
-            sheep.NoOfLegs = 4;
-            farm.Enter(sheep);
-            Console.ReadKey();
+                Sheep sheep = new Sheep();
+                sheep.Id = Guid.NewGuid().ToString();
+                sheep.NoOfLegs = 4;
+                farm.Enter(sheep);
+
+                FileLogger.Instance.LogInformation("Exercise 1 Ended");
+                Console.ReadKey();
+            }
+            catch (Exception ex)
+            {
+                FileLogger.Instance.LogError($"Exception: {ex.Message}");
+            }
         }
 
 /***************************************************************************************************************

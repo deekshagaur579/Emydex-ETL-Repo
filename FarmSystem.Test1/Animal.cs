@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FarmSystem.Test1.Utilities.Log;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,12 @@ namespace FarmSystem.Test1
         {
             get { return _noOfLegs; }
             set { _noOfLegs = value; } // Allow changing if needed
+        }
+        //TEST 1
+        public virtual void EnterFarm()
+        {
+            Console.WriteLine($"{this.GetType().Name} has entered the farm");
+            FileLogger.Instance.LogInformation($"{this.GetType().Name} ID: {Id} entered");
         }
     }
 }

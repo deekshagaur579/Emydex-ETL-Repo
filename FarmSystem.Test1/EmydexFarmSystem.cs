@@ -6,20 +6,27 @@ namespace FarmSystem.Test1
 {
     public class EmydexFarmSystem
     {
-        private readonly List<object> _animals = new List<object>();
-        private readonly ILogger _logger;
-
-        public EmydexFarmSystem()
-        {
-            _logger = LoggerFactory.GetLogger();
-        }
+        private readonly Queue<Animal> _animals = new Queue<Animal>();
 
         //TEST 1
         public void Enter(object animal)
         {
             //TODO Modify the code so that we can display the type of animal (cow, sheep etc) 
             //Hold all the animals so it is available for future activities
-            Console.WriteLine("Animal has entered the Emydex farm");
+           // Console.WriteLine("Animal has entered the Emydex farm");
+
+            //exercise 1 chnages
+            if (animal != null && animal is Animal)
+            {
+                Animal farmAnimal = (Animal)animal;
+                _animals.Enqueue(farmAnimal); //FIFO queue
+                farmAnimal.EnterFarm();
+            }
+            else
+            {
+                Console.WriteLine("No Animal has entered the Emydex farm");
+            }
+
         }
      
         //TEST 2
