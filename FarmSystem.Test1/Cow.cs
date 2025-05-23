@@ -31,11 +31,10 @@ namespace FarmSystem.Test1
         //    }
         //}
 
-        public void Talk()
+        public override void Talk()
         {
             Console.WriteLine("Cow says Moo!");
         }
-
         public void Walk()
         {
             Console.WriteLine("Cow is walking");

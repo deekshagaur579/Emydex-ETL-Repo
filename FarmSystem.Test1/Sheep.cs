@@ -30,9 +30,7 @@ namespace FarmSystem.Test1
         //        _noOfLegs = 4;
         //    }
         //}
-
-
-        public void Talk()
+        public override void Talk()
         {
             Console.WriteLine("Sheep says baa!");
         }

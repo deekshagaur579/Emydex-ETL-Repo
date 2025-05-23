@@ -7,10 +7,10 @@ namespace FarmSystem.Test1
     {
         private static void Main(string[] args)
         {
-            Excercise1();
+            //Excercise1();  to work only on exercise 2
             Excercise2();
-            Excercise3();
-            Excercise4();
+           // Excercise3();
+           // Excercise4();
             Console.ReadKey();
         }
 
@@ -79,7 +79,10 @@ Sheep has entered the farm
         {
             //TODO : Apply OOP concepts and modify the code below to get the required output 
             Console.WriteLine("Exercise 2 : Press any key to scare the animals in the farm");
-            Console.ReadKey();
+            FileLogger.Instance.LogInformation("Exercise 2 initiated");
+            try
+            {
+                Console.ReadKey();
             var farm = new EmydexFarmSystem();
             Cow cow = new Cow();
             cow.Id = Guid.NewGuid().ToString();
@@ -88,7 +91,7 @@ Sheep has entered the farm
 
             Hen hen = new Hen();
             hen.Id = Guid.NewGuid().ToString();
-            cow.NoOfLegs = 4;
+            cow.NoOfLegs = 2; //Hen has 2 legs
             farm.Enter(hen);
 
             Horse horse = new Horse();
@@ -102,7 +105,14 @@ Sheep has entered the farm
             farm.Enter(sheep);
             
             farm.MakeNoise();
+
+            FileLogger.Instance.LogInformation("Exercise 2 Ended");
             Console.ReadKey();
+            }
+            catch (Exception ex)
+            {
+                FileLogger.Instance.LogError($"Exception: {ex.Message}");
+            }
         }
 
 /*****************************************************************************************************************

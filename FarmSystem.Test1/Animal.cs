@@ -24,10 +24,17 @@ namespace FarmSystem.Test1
             set { _noOfLegs = value; } // Allow changing if needed
         }
         //TEST 1
+
+        // Virtual method that can be overridden
         public virtual void EnterFarm()
         {
             Console.WriteLine($"{this.GetType().Name} has entered the farm");
             FileLogger.Instance.LogInformation($"{this.GetType().Name} ID: {Id} entered");
         }
+
+        //TEST 2 changes
+
+        // Abstract method to talk
+        public abstract void Talk();
     }
 }
